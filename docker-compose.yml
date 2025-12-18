@@ -1,0 +1,14 @@
+services:
+  bot:
+    build: .
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./config:/app/config
+      - ./logs:/app/logs
+      - ./data:/app/data
+    logging:
+      options:
+        max-size: "100m"
+        max-file: "3"
+  
